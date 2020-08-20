@@ -5,6 +5,7 @@
 #include "sensor.h"
 #include "display.h"
 
+void delay(void);
 
 	/*
 		Klima Kontrol Yazilimi
@@ -56,7 +57,23 @@ int main(int argc, char *argv[]) {
 		{
 			motor_off();
 		}
+		delay();
+		delay();
+		delay();
+		delay();
+		delay();
 	}
 
 	return 0;
 }
+
+void delay()
+{
+	int64_t t = 0;
+	
+	for(t=0; t<10000000; t++)
+	{
+	}
+}
+
+
