@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include "motor.h"
+#include "sensor.h"
+#include "display.h"
+
 
 	/*
 		Klima Kontrol Yazilimi
@@ -33,9 +37,26 @@
 
 
 int main(int argc, char *argv[]) {
-
-
-
+	// Bir seferlik ayar islemleri --initler
+	int32_t temp = 0;
+	display_init();
+	motor_init();
+	sensor_init();
+	display_power_pn();
+	while(1)
+	{
+		temp = sensor_get_temprature_value();
+		display_write_to_screen(temp);	
+		
+		if(temp>25)
+		{
+			motor_on();
+		}
+		else
+		{
+			motor_off();
+		}
+	}
 
 	return 0;
 }
