@@ -7,11 +7,11 @@ int main(int argc, char *argv[]) {
 	
 	int degisken1; //degisken tanimlama
 	int *isaretci1; //isaretci tanimlama
-	
+	degisken1 = 10;
 	isaretci1 = &degisken1;
 	
-	printf("%d %d",isaretci1 ,degisken1);
-	
-	
+	printf("%d %d \n",isaretci1 ,degisken1);
+	*isaretci1 = 12;
+	printf("%d %d \n",isaretci1 ,degisken1);
 	return 0;
 }
